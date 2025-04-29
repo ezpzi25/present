@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zara Style Layout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+    .logo {
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: -4px;
+    }
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: -2px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 160px;
+      left: 20px;
+      width: 200px;
+    }
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .sidebar a.special {
+      color: #e91e63;
+      font-weight: bold;
+    }
+    .main-content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+    .carousel-inner img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .collection-info {
+      font-size: 12px;
+      text-align: right;
+      color: #555;
+    }
+    footer {
+      margin-left: 240px;
+      padding: 40px 20px;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ddd;
+    }
+    .social-icons a {
+      margin-right: 15px;
+      color: #333;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .newsletter-form input[type="email"] {
+      max-width: 300px;
+    }
+    .fixed-size {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card-text {
+      margin-top: 10px;
+    }
+    @media (max-width: 768px) {
+      .main-content,
+      footer {
+        margin-left: 0;
+      }
+      .sidebar {
+        position: static;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+      }
+      .sidebar a {
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+      <span class="logo">D'Sana</span>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+          <li class="nav-item"><a class="nav-link" href="checkout.html" id="cart-count">SHOPPING BAG (0)</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary border-bottom sticky-top">
+    <div class="container justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="gallery.html">GALLERY</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sidebar">
+    <a href="shoes.html">SHOES</a>
+    <a href="bags.html">BAGS</a>
+    <a href="clothes.html">CLOTHES</a>
+    <a href="lashbloom.html">LASHES</a>
+    <br /><br />
+    <a href="checkout.html" class="special">VIEW CART</a>
+  </div>
+
+  <div class="main-content">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      
+      <!-- PRODUCT TEMPLATE -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/pic1.webp" class="card-img-top fixed-size gallery-img" alt="Converse">
+          <div class="card-body">
+            <h6 class="card-title">Converse x CDG Chuck 70</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM699.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Converse x CDG Chuck 70">
+              <option value="">Pick Size</option>
+              <option value="US 6">US 6</option>
+              <option value="US 7">US 7</option>
+              <option value="US 8">US 8</option>
+              <option value="US 9">US 9</option>
+              <option value="US 10">US 10</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Converse x CDG Chuck 70" data-price="699.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/pic2.webp" class="card-img-top fixed-size gallery-img" alt="Converse">
+          <div class="card-body">
+            <h6 class="card-title">Converse x Tom & Jerry Chuck 70</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM469.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Converse x Tom & Jerry Chuck 70">
+              <option value="">Pick Size</option>
+              <option value="US 6">US 6</option>
+              <option value="US 7">US 7</option>
+              <option value="US 8">US 8</option>
+              <option value="US 9">US 9</option>
+              <option value="US 10">US 10</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Converse x Tom & Jerry Chuck 70" data-price="469.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/pic3.avif" class="card-img-top fixed-size gallery-img" alt="Adidas">
+          <div class="card-body">
+            <h6 class="card-title">Superstar II Shoes</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM569.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Superstar II Shoes">
+              <option value="">Pick Size</option>
+              <option value="US 6">US 6</option>
+              <option value="US 7">US 7</option>
+              <option value="US 8">US 8</option>
+              <option value="US 9">US 9</option>
+              <option value="US 10">US 10</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Superstar II Shoes0" data-price="569.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/pic4.avif" class="card-img-top fixed-size gallery-img" alt="Adidas">
+          <div class="card-body">
+            <h6 class="card-title">SAMBA OG W</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM569.00</p>
+            <select class="form-select mb-2 pick-size" data-name="SAMBA OG W">
+              <option value="">Pick Size</option>
+              <option value="US 6">US 6</option>
+              <option value="US 7">US 7</option>
+              <option value="US 8">US 8</option>
+              <option value="US 9">US 9</option>
+              <option value="US 10">US 10</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="SAMBA OG W" data-price="569.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/pic5.avif" class="card-img-top fixed-size gallery-img" alt="Nike">
+          <div class="card-body">
+            <h6 class="card-title">Air Jordan 4 Retro 'Fear'</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM605.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Air Jordan 4 Retro 'Fear'">
+              <option value="">Pick Size</option>
+              <option value="US 6">US 6</option>
+              <option value="US 7">US 7</option>
+              <option value="US 8">US 8</option>
+              <option value="US 9">US 9</option>
+              <option value="US 10">US 10</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Air Jordan 4 Retro 'Fear'" data-price="605.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/pic6.avif" class="card-img-top fixed-size gallery-img" alt="Nike">
+          <div class="card-body">
+            <h6 class="card-title">Nike Dunk Low</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM489.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Nike Dunk Low">
+              <option value="">Pick Size</option>
+              <option value="US 6">US 6</option>
+              <option value="US 7">US 7</option>
+              <option value="US 8">US 8</option>
+              <option value="US 9">US 9</option>
+              <option value="US 10">US 10</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Nike Dunk Low" data-price="489.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/pic7.jpg" class="card-img-top fixed-size gallery-img" alt="Vans">
+          <div class="card-body">
+            <h6 class="card-title">Old Skool 36</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM399.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Old Skool 36">
+              <option value="">Pick Size</option>
+              <option value="US 6">US 6</option>
+              <option value="US 7">US 7</option>
+              <option value="US 8">US 8</option>
+              <option value="US 9">US 9</option>
+              <option value="US 10">US 10</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Old Skool 36" data-price="399.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/pic8.jpg" class="card-img-top fixed-size gallery-img" alt="Vans">
+          <div class="card-body">
+            <h6 class="card-title">CSK8-Low Rearrange</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM159.00</p>
+            <select class="form-select mb-2 pick-size" data-name="CSK8-Low Rearrange">
+              <option value="">Pick Size</option>
+              <option value="US 6">US 6</option>
+              <option value="US 7">US 7</option>
+              <option value="US 8">US 8</option>
+              <option value="US 9">US 9</option>
+              <option value="US 10">US 10</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="CSK8-Low Rearrange" data-price="159.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+    </div>
+
+    <div class="collection-info">
+      THE NEW<br /> COLLECTION<br />SUMMER 2025
+    </div>
+  </div>
+
+  <footer class="text-center">
+    <div class="mb-4">
+      <h5>Stay Connected</h5>
+      <div class="social-icons mb-2">
+        <a href="https://www.instagram.com/dsanastoree?igsh=MWlobmZ0d3Zqa3VpdA%3D%3D&utm_source=qr"><i class="bi bi-instagram me-3" style="font-size: 20px; color: #333;"></i></a>
+        <a href="https://www.facebook.com/share/168gxFDYU9/?mibextid=wwXIfr"><i class="bi bi-facebook me-3" style="font-size: 20px; color: #333;"></i></a>
+        <a href="https://www.tiktok.com/@dsana.store?_t=ZS-8vilF3sQVoA&_r=1"><i class="bi bi-tiktok me-3" style="font-size: 20px; color: #333;"></i></a>
+        <a href="https://wa.me/+601133164592"><i class="bi bi-whatsapp" style="font-size: 20px; color: #333;"></i></a>
+      </div>
+    </div>
+
+    <div class="newsletter-form mb-4">
+      <h6>Subscribe to our newsletter</h6>
+      <form class="d-flex justify-content-center">
+        <input type="email" class="form-control me-2" placeholder="Enter your email" required />
+        <button class="btn btn-dark" type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function updateCartCount() {
+      document.getElementById("cart-count").textContent = `SHOPPING BAG (${cart.length})`;
+    }
+
+    function saveCart() {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const cardBody = button.closest(".card-body");
+        const select = cardBody.querySelector(".pick-size");
+        const size = select.value;
+
+        if (!size) {
+          alert("Please select a size before adding to cart.");
+          return;
+        }
+
+        const name = button.getAttribute("data-name");
+        const price = parseFloat(button.getAttribute("data-price"));
+        cart.push({ name, price, size });
+        saveCart();
+        updateCartCount();
+        alert(`${name} (Size: ${size}) has been added to your bag.`);
+      });
+    });
+
+    updateCartCount();
+
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('click', () => {
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = img.src;
+        new bootstrap.Modal(document.getElementById('imageModal')).show();
+      });
+    });
+
+  </script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body text-center">
+          <img src="" id="modalImage" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

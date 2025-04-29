@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Carousel Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      [data-bs-theme="dark"] .carousel-caption {
+    color: #fff !important; /* Change to your desired color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Outline effect */
+      }
+
+      [data-bs-theme="dark"] .carousel-control-prev,
+    [data-bs-theme="dark"] .carousel-control-next {
+    filter: invert(100%); /* Change button color */
+      }
+
+
+      [data-bs-theme="light"] .carousel-caption {
+    color: #fff !important; /* Change to your desired color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Outline effect */
+      }
+
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+
+  <!-- Bootstrap JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+  
+<header data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark fw-bold" href="#">D'Sana Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="contact.html">Find Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="gallery.html">Gallery</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search" id="searchForm">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div id="myCarousel" class="carousel slide carousel-fade mb-6" data-bs-ride="carousel" data-bs-interval="8500">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="hero-slide" style="background-image: url('image/hero1.png');">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Newest Summer Collection.</h1>
+              <p class="opacity-75">Essentials for City Life.</p>
+              <p><a class="btn btn-lg btn-primary" href="shoes.html">Shop Now</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-item">
+        <img src="image/hero2.jpg" class="d-block w-100" alt="Second slide">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Denim Collection</h1>
+            <p>Soft 100% cotton denim with an authentic texture.</p>
+            <p><a class="btn btn-lg btn-primary" href="#featurette">New Release</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="image/hero3.webp" class="d-block w-100" alt="Third slide">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Denim Brick Bag Collection</h1>
+            <p>Rugged denim with a structured, durable feel.</p>
+            <p><a class="btn btn-lg btn-primary" href="gallery.html">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="image/shoes.webp" class="rounded-circle" width="140" height="140" alt="Men" />
+        <h2 class="fw-normal">Shoes</h2>
+        <p>Step into style with our latest shoe collection—everyday essentials for every step.</p>
+        <p><a class="btn btn-secondary" href="shoes.html">Step Into Style &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      
+      <div class="col-lg-4">
+        <img src="image/bag.webp" class="rounded-circle" width="140" height="140" alt="Women" />
+        <h2 class="fw-normal">Bags</h2>
+        <p>Carry confidence with our latest bags—everyday essentials with style and function.</p>
+        <p><a class="btn btn-secondary" href="bags.html">Carry the vibe &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      
+      <div class="col-lg-4" >
+        <img src="image/clothes.avif" class="rounded-circle" width="140" height="140" alt="Kids" />
+        <h2 class="fw-normal">Clothes</h2>
+        <p>Refresh your look with our latest clothing—everyday essentials made for style and comfort.</p>
+        <p><a class="btn btn-secondary" href="clothes.html">Own the fit &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+    
+    <div class="row featurette" id="featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Converse x Tom & Jerry Chuck 70</h2>
+        <p class="lead">The iconic animated series meets the classic canvas of Chuck Taylor All Stars, marking 85 years of mischief and mayhem between friends.</p>
+        <button type="button" class="btn btn-info" data-bs-toggle="popover" title="More Details" data-bs-content="Converse brings the mayhem and mischief of Tom and Jerry to life on limited-edition Chuck Taylor All Stars, celebrating the series’ 85th anniversary. With all-over graphics and clever spins on iconic elements, the design captures the bonkers visual humor of the show. Classic style. A timeless chase. Some things just never get old.">More Info</button>
+      </div>
+      <div class="col-md-5">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal1" data-bs-toggle="tooltip" title="Limited-edition Tom and Jerry high-top sneaker">
+          <img src="image/shoesnew.webp" class="img-thumbnail" width="400" height="500">
+        </a>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal1Label">Converse x Tom & Jerry Chuck 70</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="image/shoesnew.webp" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <hr class="featurette-divider">
+    
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Chroma in Blu Jeans Denim</h2>
+        <p class="lead">Cool, effortless, and endlessly wearable—the Denim Series is your new everyday go-to. With a sleek edge and just the right amount of detail, these bags elevate any look without trying too hard. </p>
+        <button type="button" class="btn btn-info" data-bs-toggle="popover" title="More Details" data-bs-content="Colours displayed on the website may vary slightly from the actual product due to differences in screen settings & lighting conditions.">More Info</button>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal2" data-bs-toggle="tooltip" title="Practical yet undeniably chic, they’re made to keep up with you. ">
+          <img src="image/bag6.webp" class="img-thumbnail" width="400" height="500">
+        </a>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal2Label">Chroma in Blu Jeans Denim</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="image/bag6.webp" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="featurette-divider">
+    
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Untamed MC Jacket</h2>
+        <p class="lead">Ride free. Live fierce. Represent the wild spirit of the road with the official UNTAMED MC jacket. Crafted for those who don’t follow the rules — they make their own. Built tough, worn proud. You’re not just wearing a shirt — you’re wearing a lifestyle.</p>
+        <button type="button" class="btn btn-info" data-bs-toggle="popover" title="More Details" data-bs-content="Made from high-quality, breathable cotton with a bold front/back print that stands out on the road or off it. Perfect for rides, rallies, or just showing off your crew pride wherever you go.">More Info</button>
+      </div>
+      <div class="col-md-5">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal3" data-bs-toggle="tooltip" title="Designed for layering over your tee or hoodie, it’s the perfect cut for long rides, club meets, or everyday outlaw style.">
+          <img src="image/clothesnew.jpg" class="img-thumbnail" width="400" height="500">
+        </a>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal3Label">Untamed MC Jacket</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="image/clothesnew.jpg" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <hr class="featurette-divider">
+    
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">LASHBLOOM Revitalizing Serum Lash + Brow</h2>
+        <p class="lead">Cool, effortless, and endlessly wearable—the Denim Series is your new everyday go-to. With a sleek edge and just the right amount of detail, these bags elevate any look without trying too hard. </p>
+        <button type="button" class="btn btn-info" data-bs-toggle="popover" title="More Details" data-bs-content="Colours displayed on the website may vary slightly from the actual product due to differences in screen settings & lighting conditions.">More Info</button>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal4" data-bs-toggle="tooltip" title="Practical yet undeniably chic, they’re made to keep up with you. ">
+          <img src="image/LASH_NEW.webp" class="img-thumbnail" width="400" height="500">
+        </a>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal4Label">LASHBLOOM Revitalizing Serum Lash + Brow</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="image/LASH_NEW.webp" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="featurette-divider">
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+        
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+          return new bootstrap.Popover(popoverTriggerEl);
+        });
+      });
+    </script>
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+</div>
+
+  <!-- Footer -->
+  <footer style="width: 100%; position: relative; left: 0; margin-left: 0; background-color: #f8f9fa; border-top: 1px solid #ddd; padding: 40px 20px;" class="text-center mt-auto">
+  <div class="mb-4">
+    <h5>Stay Connected</h5>
+    <div class="social-icons mb-2">
+      <a href="https://www.instagram.com/dsanastoree?igsh=MWlobmZ0d3Zqa3VpdA%3D%3D&utm_source=qr"><i class="bi bi-instagram me-3" style="font-size: 20px; color: #000000;"></i></a>
+      <a href="https://www.facebook.com/share/168gxFDYU9/?mibextid=wwXIfr"><i class="bi bi-facebook me-3" style="font-size: 20px; color: #333;"></i></a>
+      <a href="https://www.tiktok.com/@dsana.store?_t=ZS-8vilF3sQVoA&_r=1"><i class="bi bi-tiktok me-3" style="font-size: 20px; color: #333;"></i></a>
+      <a href="https://wa.me/+601133164592"><i class="bi bi-whatsapp" style="font-size: 20px; color: #333;"></i></a>  
+    </div>
+  </div>
+
+  <div class="newsletter-form mb-4">
+    <h6>Subscribe to our newsletter</h6>
+    <form class="d-flex justify-content-center">
+      <input type="email" class="form-control me-2" style="max-width: 300px;" placeholder="Enter your email" required />
+      <button class="btn btn-dark" type="submit">Subscribe</button>
+    </form>
+  </div>
+</footer>
+
+</main>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.getElementById("searchForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+  
+      let searchQuery = document.getElementById("searchInput").value.trim().toLowerCase();
+      if (!searchQuery) return;
+  
+      removeHighlights(); // Clear previous highlights
+  
+      let pageTextNodes = getTextNodes(document.body);
+      let found = false;
+  
+      for (let node of pageTextNodes) {
+          let nodeText = node.nodeValue.toLowerCase();
+          let index = nodeText.indexOf(searchQuery);
+  
+          if (index !== -1) {
+              found = true;
+              let range = document.createRange();
+              range.setStart(node, index);
+              range.setEnd(node, index + searchQuery.length);
+  
+              let span = document.createElement("span");
+              span.className = "highlight"; // Add a class for easy removal
+              span.style.backgroundColor = "yellow";
+              span.style.fontWeight = "bold";
+              range.surroundContents(span);
+  
+              span.scrollIntoView({ behavior: "smooth", block: "center" }); // Scroll to word
+              break;
+          }
+      }
+  
+      document.getElementById("searchMessage").innerHTML = found 
+          ? `🔍 Found "<b>${searchQuery}</b>" and jumped to it.` 
+          : `❌ No results found for "<b>${searchQuery}</b>".`;
+  });
+  
+  // Function to remove previous highlights
+  function removeHighlights() {
+      document.querySelectorAll(".highlight").forEach(span => {
+          let parent = span.parentNode;
+          parent.replaceChild(document.createTextNode(span.textContent), span);
+      });
+  }
+  
+  // Function to get all text nodes
+  function getTextNodes(element) {
+      let textNodes = [];
+      let walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+      while (walker.nextNode()) {
+          textNodes.push(walker.currentNode);
+      }
+      return textNodes;
+  }
+  </script>
+  
+  <script>
+    document.querySelector('a[href="#featurette"]').addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        document.getElementById("featurette").scrollIntoView({ behavior: "smooth" });
+    });
+    </script>
+
+    <!-- Bootstrap CSS (CDN only) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const carouselElement = document.querySelector('#myCarousel');
+  const carousel = new bootstrap.Carousel(carouselElement, {
+    interval: 3000,
+    ride: 'carousel'
+  });
+</script>
+
+    </body>
+</html>

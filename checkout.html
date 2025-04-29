@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Danil Style</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #000;
+    }
+    .navbar {
+      margin-bottom: 20px;
+    }
+    .checkout-summary {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .checkout-summary h5 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .checkout-summary .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .checkout-summary .item .item-name {
+      font-weight: bold;
+    }
+    .checkout-summary .total-price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #e91e63;
+      margin-top: 20px;
+    }
+    .form-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .form-section input,
+    .form-section select {
+      margin-bottom: 15px;
+    }
+    .btn-custom {
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      width: 100%;
+    }
+    .btn-custom:hover {
+      background-color: #c2185b;
+    }
+    .remove-btn {
+      margin-left: 10px;
+    }
+    .bank-btn.active {
+      border-color: #e91e63;
+      box-shadow: 0 0 5px #e91e63;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="logo">D'Sana Store</span>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link fw-bold" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold active" href="shoes.html">STORE</a></li>
+          <li class="nav-item"><a class="nav-link" href="checkout.html">SHOPPING BAG (<span id="bag-count">0</span>)</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Checkout Page Content -->
+  <div class="container">
+    <div class="row">
+      <!-- Order Summary on the Left -->
+      <div class="col-lg-6 order-lg-1">
+        <div class="checkout-summary">
+          <h5>Order Summary</h5>
+          <div id="order-items"></div>
+          <div class="total-price" id="total-price"></div>
+    
+          <!-- Clear Cart Button -->
+          <button id="clear-cart" class="btn btn-outline-danger mt-3 w-100">Clear Cart</button>
+        </div>
+      </div>
+    
+      <!-- Billing Info on the Right -->
+      <div class="col-lg-6 order-lg-2">
+        <div class="form-section">
+          <h5>Billing Information</h5>
+          <form id="checkout-form">
+            <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="address">Shipping Address</label>
+              <input type="text" id="address" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="zip">ZIP Code</label>
+              <input type="text" id="zip" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" id="city" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="country">Country</label>
+              <select id="country" class="form-control" required>
+                <option value="">Select your country</option>
+                <option value="MY">Malaysia</option>
+                <option value="ID">Indonesia</option>
+                <option value="PH">Philippines</option>
+                <option value="TH">Thailand</option>
+                <option value="SG">Singapore</option>
+                <option value="CN">China</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="payment-method">Payment Method</label>
+              <div class="d-flex flex-wrap gap-2 mb-3" id="payment-method">
+                <button type="button" class="btn btn-outline-secondary bank-btn" onclick="window.open('https://www.maybank2u.com.my/', '_blank')" data-method="maybank">
+                  <img src="https://logo.clearbit.com/maybank2u.com.my" alt="Maybank" height="30">
+                </button>
+                <button type="button" class="btn btn-outline-secondary bank-btn" onclick="window.open('https://https://www.cimb.com.my/', '_blank')" data-method="cimb">
+                  <img src="https://logo.clearbit.com/www.cimb.com.my" alt="Cimb" height="30">
+                </button>
+                <button type="button" class="btn btn-outline-secondary bank-btn" onclick="window.open('https://www.rhbgroup.com/', '_blank')" data-method="rhb">
+                  <img src="https://logo.clearbit.com/www.rhbgroup.com" alt="Rhb" height="30">
+                </button>
+                <button type="button" class="btn btn-outline-secondary bank-btn" onclick="window.open('https://www.pbebank.com/', '_blank')" data-method="publicbank">
+                  <img src="https://logo.clearbit.com/www.pbebank.com" alt="PublicBank" height="30">
+                </button>
+                <button type="button" class="btn btn-outline-secondary bank-btn" onclick="window.open('https://www.hlb.com.my/', '_blank')" data-method="hongleong">
+                  <img src="https://logo.clearbit.com/www.hlb.com.my" alt="HL" height="30">
+                </button>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="card-info">Payment Information</label>
+              <input type="text" id="card-info" class="form-control" placeholder="Card number" required />
+            </div>
+          
+            <div class="form-group">
+              <button type="submit" class="btn-custom">Confirm Order</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const bagCount = document.getElementById('bag-count');
+    const orderItems = document.getElementById('order-items');
+    const totalPrice = document.getElementById('total-price');
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCheckout() {
+      let total = 0;
+      bagCount.textContent = cart.length;
+      orderItems.innerHTML = '';
+
+      cart.forEach((item, index) => {
+        total += item.price;
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('item');
+        itemDiv.innerHTML = `
+          <div>
+            <span class="item-name">${item.name}</span>
+            <div class="text-muted small">Size: ${item.size || 'N/A'}</div>
+          </div>
+          <div>
+            <span class="item-price">RM${item.price.toFixed(2)}</span>
+            <button class="btn btn-sm btn-danger remove-btn" onclick="removeItem(${index})">Remove</button>
+          </div>
+        `;
+        orderItems.appendChild(itemDiv);
+      });
+
+      totalPrice.textContent = `Total: RM${total.toFixed(2)}`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCheckout();
+    }
+
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {e.preventDefault();
+
+  const orderDetails = {
+    items: cart,
+    total: cart.reduce((sum, item) => sum + item.price, 0),
+    customer: {
+      name: document.getElementById('full-name').value,
+      email: document.getElementById('email').value,
+      address: document.getElementById('address').value,
+      city: document.getElementById('city').value,
+      country: document.getElementById('country').value,
+      zip: document.getElementById('zip').value,
+    }
+  };
+
+  localStorage.setItem('lastOrder', JSON.stringify(orderDetails));
+  localStorage.removeItem('cart');
+  window.location.href = 'receipt.html';
+});
+
+
+    document.getElementById('clear-cart').addEventListener('click', function () {
+      if (confirm('Are you sure you want to clear the cart?')) {
+        localStorage.removeItem('cart');
+        cart = [];
+        updateCheckout();
+      }
+    });
+
+    updateCheckout();
+
+    const bankButtons = document.querySelectorAll('.bank-btn');
+bankButtons.forEach(btn => {
+  btn.addEventListener('click', function () {
+    bankButtons.forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+  </script>
+
+</body>
+</html>

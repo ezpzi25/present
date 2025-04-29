@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danil Style</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .logo {
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: -4px;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: -2px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 160px;
+      left: 20px;
+      width: 200px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .sidebar a.special {
+      color: #e91e63;
+      font-weight: bold;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+
+    .collection-info {
+      font-size: 12px;
+      text-align: right;
+      color: #555;
+    }
+
+    footer {
+      margin-left: 240px;
+      padding: 40px 20px;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ddd;
+    }
+
+    .social-icons a {
+      margin-right: 15px;
+      color: #333;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .newsletter-form input[type="email"] {
+      max-width: 300px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+    }
+
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    @media screen and (max-width: 992px) {
+      .main-content, footer {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        top: auto;
+        left: auto;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .sidebar a {
+        margin: 5px 10px;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      .column {
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .column {
+        flex: 100%;
+        max-width: 100%;
+      }
+
+      .logo {
+        font-size: 36px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+      <span class="logo">D'Sana</span>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+          <li class="nav-item"><a class="nav-link" href="checkout.html">SHOPPING BAG (0)</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary border-bottom sticky-top">
+    <div class="container justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link fw-bold active" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold active" href="shoes.html">STORE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sidebar">
+    <a href="shoes.html">SHOES</a>
+    <a href="bags.html">BAGS</a>
+    <a href="clothes.html">CLOTHES</a>
+    <a href="lashbloom.html">LASHES</a>
+    <br /><br />
+    <a href="checkout.html" class="special">VIEW CART</a>
+  </div>
+
+  <div class="main-content">
+    <div class="row">
+      <div class="column">
+        <img src="https://i.pinimg.com/236x/45/2d/56/452d56c8d06f8315d4f118850b88d729.jpg" alt="Rocky area">
+        <img src="https://i.pinimg.com/736x/43/a4/88/43a488d8409533091bb22adb6d16b230.jpg" alt="Waterfall">
+        <img src="https://i.pinimg.com/736x/69/7e/36/697e36f12246660b360a7414e4758b89.jpg" alt="Paris street view">
+        <img src="https://i.pinimg.com/736x/4c/4d/9c/4c4d9c91a9e247a4e0c4e54f4112d407.jpg" alt="Nature scene">
+        <img src="https://i.pinimg.com/736x/19/58/f7/1958f7cdebafc81a4543a9b88d8222a6.jpg" alt="Misty forest">
+        <img src="https://i.pinimg.com/736x/20/37/4e/20374ee1e4ffeeb121ff1d23fe3f6c27.jpg" alt="Paris again">
+      </div>
+      <div class="column">
+        <img src="https://i.pinimg.com/736x/3f/fa/ef/3ffaef5b41fc80c40ceadf8946838a56.jpg" alt="Underwater scene">
+        <img src="https://i.pinimg.com/736x/6b/db/ec/6bdbecd82267c6a761ecb496b118727d.jpg" alt="Ocean waves">
+        <img src="https://i.pinimg.com/736x/3c/8a/d1/3c8ad1ed19f287b1098e4c8a126f42a3.jpg" alt="Wedding couple">
+        <img src="https://i.pinimg.com/736x/34/56/6c/34566c9b3cb7f04c44064985a7a53dbf.jpg" alt="Mountain skyline">
+        <img src="https://i.pinimg.com/736x/80/d8/6e/80d86ef4adf800fa9e9e3e9e6feaea7e.jpg" alt="Rock formation">
+        <img src="https://i.pinimg.com/736x/ed/79/ff/ed79ff3e5f20f46c52b3d488cd0a5356.jpg" alt="Underwater bubbles">
+      </div>
+      <div class="column">
+        <img src="https://i.pinimg.com/736x/44/2a/82/442a822671dccedce23e22f19f0fd4d7.jpg" alt="Wedding ceremony">
+        <img src="https://i.pinimg.com/736x/d9/a7/58/d9a7587bbd9d7410c665a0d4c12a256d.jpg" alt="Rocks on shore">
+        <img src="https://i.pinimg.com/736x/34/56/6c/34566c9b3cb7f04c44064985a7a53dbf.jpg" alt="Falls landscape">
+        <img src="https://i.pinimg.com/736x/d4/bf/6a/d4bf6a3faf9c0ca19db9a3e014187a20.jpg" alt="City of Paris">
+        <img src="https://i.pinimg.com/736x/84/df/7e/84df7eae9db0d432efbcd9df29e69e71.jpg" alt="Natural greenery">
+        <img src="https://i.pinimg.com/736x/db/76/c2/db76c2177beb66ad3db08cf1e92e9030.jpg" alt="Forest mist">
+        <img src="https://i.pinimg.com/736x/ed/53/5c/ed535c4a73318e7e87da8e86cc67ddaf.jpg" alt="Parisian building">
+      </div>
+      <div class="column">
+        <img src="https://i.pinimg.com/736x/8f/75/c7/8f75c7b9a00ae656733d5c710fe279a7.jpg" alt="Scuba dive">
+        <img src="https://i.pinimg.com/736x/44/2a/82/442a822671dccedce23e22f19f0fd4d7.jpg" alt="Ocean view">
+        <img src="https://i.pinimg.com/736x/95/4b/64/954b64078206dc2c0a387f86866e1547.jpg" alt="Wedding scene">
+        <img src="https://i.pinimg.com/736x/c9/4e/f6/c94ef6188fd52379cf1f54350f7583f9.jpg" alt="Mountain peaks">
+        <img src="https://i.pinimg.com/736x/c0/35/a7/c035a7b84fc1a69bdf4b59b35f0e85e7.jpg" alt="Rock cliffs">
+        <img src="https://i.pinimg.com/236x/45/2d/56/452d56c8d06f8315d4f118850b88d729.jpg" alt="Underwater coral">
+      </div>
+    </div>
+
+    <div class="collection-info">
+      THE NEW<br /> COLLECTION<br />SUMMER 2025
+    </div>
+  </div>
+
+  <footer class="text-center">
+    <div class="mb-4">
+      <h5>Stay Connected</h5>
+      <div class="social-icons mb-2">
+        <a href="https://www.instagram.com/dsanastoree?igsh=MWlobmZ0d3Zqa3VpdA%3D%3D&utm_source=qr"><i class="bi bi-instagram me-3" style="font-size: 20px; color: #333;"></i></a>
+        <a href="https://www.facebook.com/share/168gxFDYU9/?mibextid=wwXIfr"><i class="bi bi-facebook me-3" style="font-size: 20px; color: #333;"></i></a>
+        <a href="https://www.tiktok.com/@dsana.store?_t=ZS-8vilF3sQVoA&_r=1"><i class="bi bi-tiktok me-3" style="font-size: 20px; color: #333;"></i></a>
+        <a href="https://wa.me/+601133164592"><i class="bi bi-whatsapp" style="font-size: 20px; color: #333;"></i></a>
+      </div>
+    </div>
+
+    <div class="newsletter-form mb-4">
+      <h6>Subscribe to our newsletter</h6>
+      <form class="d-flex justify-content-center">
+        <input type="email" class="form-control me-2" placeholder="Enter your email" required />
+        <button class="btn btn-dark" type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

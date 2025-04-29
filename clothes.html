@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zara Style Layout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+    .logo {
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: -4px;
+    }
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: -2px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 160px;
+      left: 20px;
+      width: 200px;
+    }
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .sidebar a.special {
+      color: #e91e63;
+      font-weight: bold;
+    }
+    .main-content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+    .carousel-inner img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .collection-info {
+      font-size: 12px;
+      text-align: right;
+      color: #555;
+    }
+    footer {
+      margin-left: 240px;
+      padding: 40px 20px;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ddd;
+    }
+    .social-icons a {
+      margin-right: 15px;
+      color: #333;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .newsletter-form input[type="email"] {
+      max-width: 300px;
+    }
+    .fixed-size {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card-text {
+      margin-top: 10px;
+    }
+    @media (max-width: 768px) {
+      .main-content,
+      footer {
+        margin-left: 0;
+      }
+      .sidebar {
+        position: static;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+      }
+      .sidebar a {
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+      <span class="logo">D'Sana</span>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+          <li class="nav-item"><a class="nav-link" href="checkout.html" id="cart-count">SHOPPING BAG (0)</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary border-bottom sticky-top">
+    <div class="container justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="Gallery.html">GALLERY</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sidebar">
+    <a href="shoes.html">SHOES</a>
+    <a href="bags.html">BAGS</a>
+    <a href="clothes.html">CLOTHES</a>
+    <a href="lashbloom.html">LASHES</a>
+    <br /><br />
+    <a href="cart.html" class="special">VIEW CART</a>
+  </div>
+
+  <div class="main-content">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      
+      <!-- PRODUCT TEMPLATE -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="https://i.pinimg.com/236x/e3/1c/96/e31c96f75acea49feac08d030822efab.jpg" class="card-img-top fixed-size gallery-img" alt="Hoodie">
+          <div class="card-body">
+            <h6 class="card-title">Graphic Black Hoodies</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM150.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Graphic Black Hoodies">
+                <option value="">Pick Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Graphic Black Hoodies" data-price="150.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/clothes1.jpg" class="card-img-top fixed-size gallery-img" alt="shirt">
+          <div class="card-body">
+            <h6 class="card-title">Crew long sleeve Shirt</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM39.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Crew Long Sleeve Shirt">
+                <option value="">Pick Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Crew Long Sleeve Shirt" data-price="39.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="https://i.pinimg.com/736x/7a/1b/e1/7a1be174f7fec6df254e4693dc1e6731.jpg" class="card-img-top fixed-size gallery-img" alt="Shirt">
+          <div class="card-body">
+            <h6 class="card-title">Camo Work Jean Jacket</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM139.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Camo Work Jean Jacket">
+              <option value="">Pick Size</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Camo Work Jean Jacket" data-price="139.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="image/clothes2.jpg" class="card-img-top fixed-size gallery-img" alt="shirt">
+          <div class="card-body">
+            <h6 class="card-title">UNTAMED MC Jacket</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM65.00</p>
+            <select class="form-select mb-2 pick-size" data-name="UNTAMED MC Jacket">
+                <option value="">Pick Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="UNTAMED MC Jacket" data-price="65.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="https://i.pinimg.com/736x/45/f7/7b/45f77b1f8664910f6fc743e6fb11ff55.jpg" class="card-img-top fixed-size gallery-img" alt="Pants">
+          <div class="card-body">
+            <h6 class="card-title">Casual Pants</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM99.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Casual Pants">
+              <option value="">Pick Size</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Casual Pants" data-price="99.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="https://i.pinimg.com/736x/9c/33/7e/9c337e6c939e5e13be928e812dbc3a22.jpg" class="card-img-top fixed-size gallery-img" alt="trousers">
+          <div class="card-body">
+            <h6 class="card-title">Spring Jean Trousers</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM119.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Spring Jean Trousers">
+              <option value="">Pick Size</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Spring Jean Trousers" data-price="119.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="https://i.pinimg.com/736x/8f/53/f6/8f53f6d495d2c801695165fbcef18b92.jpg" class="card-img-top fixed-size gallery-img" alt="Pants">
+          <div class="card-body">
+            <h6 class="card-title">Bermuda Short</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM79.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Bermuda Short">
+                <option value="">Pick Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Bermuda Short" data-price="79.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+      <!-- BEGIN ITEM -->
+      <div class="col text-center">
+        <div class="card h-100 border-0">
+          <img src="https://i.pinimg.com/736x/12/6e/9b/126e9b8f1c1d1d5f96537076903ad8b4.jpg" class="card-img-top fixed-size gallery-img" alt="Pants">
+          <div class="card-body">
+            <h6 class="card-title">Sillouhete Long Pants</h6>
+            <p class="card-text text-muted mt-2 mb-2">RM159.00</p>
+            <select class="form-select mb-2 pick-size" data-name="Sillouhete Long Pants">
+              <option value="">Pick Size</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+            </select>
+            <button class="btn btn-dark add-to-cart" data-name="Sillouhete Long Pants" data-price="159.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- END ITEM -->
+
+    </div>
+
+    <div class="collection-info">
+      THE NEW<br /> COLLECTION<br />SUMMER 2025
+    </div>
+  </div>
+
+  <footer class="text-center">
+    <div class="mb-4">
+      <h5>Stay Connected</h5>
+      <div class="social-icons mb-2">
+        <a href="https://www.instagram.com/dsanastoree?igsh=MWlobmZ0d3Zqa3VpdA%3D%3D&utm_source=qr"><i class="bi bi-instagram me-3" style="font-size: 20px; color: #333;"></i></a>
+        <a href="https://www.facebook.com/share/168gxFDYU9/?mibextid=wwXIfr"><i class="bi bi-facebook me-3" style="font-size: 20px; color: #333;"></i></a>
+        <a href="https://www.tiktok.com/@dsana.store?_t=ZS-8vilF3sQVoA&_r=1"><i class="bi bi-tiktok me-3" style="font-size: 20px; color: #333;"></i></a>
+        <a href="https://wa.me/+601133164592"><i class="bi bi-whatsapp" style="font-size: 20px; color: #333;"></i></a>
+      </div>
+    </div>
+
+    <div class="newsletter-form mb-4">
+      <h6>Subscribe to our newsletter</h6>
+      <form class="d-flex justify-content-center">
+        <input type="email" class="form-control me-2" placeholder="Enter your email" required />
+        <button class="btn btn-dark" type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function updateCartCount() {
+      document.getElementById("cart-count").textContent = `SHOPPING BAG (${cart.length})`;
+    }
+
+    function saveCart() {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const cardBody = button.closest(".card-body");
+        const select = cardBody.querySelector(".pick-size");
+        const size = select.value;
+
+        if (!size) {
+          alert("Please select a size before adding to cart.");
+          return;
+        }
+
+        const name = button.getAttribute("data-name");
+        const price = parseFloat(button.getAttribute("data-price"));
+        cart.push({ name, price, size });
+        saveCart();
+        updateCartCount();
+        alert(`${name} (Size: ${size}) has been added to your bag.`);
+      });
+    });
+
+    updateCartCount();
+
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('click', () => {
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = img.src;
+        new bootstrap.Modal(document.getElementById('imageModal')).show();
+      });
+    });
+
+  </script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body text-center">
+          <img src="" id="modalImage" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
